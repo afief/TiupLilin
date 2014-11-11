@@ -1,0 +1,9 @@
+{
+  "name": "tiup_lilin",
+  "description": "pake socket, tiup lilin, trus lilinnya mati",
+  "version": "0.0.1",
+  "dependencies": {
+    "express": "^4.10.2",
+    "node-sass": "^1.2.2"
+  }
+}
