@@ -3,16 +3,16 @@
 	padding: 0;
 }
 
+body {
+	background-color: #000;
+}
+
 #canvas {
 	display: block;
-	background: #444444; /* Old browsers */
-	background: -moz-radial-gradient(center, ellipse cover, #444444 1%, #000000 100%); /* FF3.6+ */
-	background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(1%,#444444), color-stop(100%,#000000)); /* Chrome,Safari4+ */
-	background: -webkit-radial-gradient(center, ellipse cover, #444444 1%,#000000 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-radial-gradient(center, ellipse cover, #444444 1%,#000000 100%); /* Opera 12+ */
-	background: -ms-radial-gradient(center, ellipse cover, #444444 1%,#000000 100%); /* IE10+ */
-	background: radial-gradient(ellipse at center, #444444 1%,#000000 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#000000',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+	background-image: url("img/candle.jpg");
+	background-size: 150px;
+	background-position: 50% 54%;
+	background-repeat: no-repeat;
 }
 .info {
 	position: fixed;

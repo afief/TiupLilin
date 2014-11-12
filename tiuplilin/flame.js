@@ -4,8 +4,9 @@ function Flame() {
 	
 	var W = window.innerWidth, H = window.innerHeight;
 	canvas.width = W;
-	
 	canvas.height = H;
+
+	canvas.style.backgroundPosition = "50% " + Math.round(H/2 - 30) + "px";
 	
 
 	var particles = [];
@@ -59,11 +60,11 @@ function Flame() {
 		ctx.globalCompositeOperation = "lighter";
 
 		/*bikin lilin*/
-		ctx.fillStyle = "black";
-		ctx.fillRect(W/2-2, H/2+5, 4, 20);
+		// ctx.fillStyle = "black";
+		// ctx.fillRect(W/2-2, H/2+5, 4, 20);
 
-		ctx.fillStyle = "#ECE7E3";
-		ctx.fillRect(W/2-20, H/2+20, 40, H/2-50);
+		// ctx.fillStyle = "#ECE7E3";
+		// ctx.fillRect(W/2-20, H/2+20, 40, H/2-50);
 
 		for(var i = 0; i < particles.length; i++)
 		{
