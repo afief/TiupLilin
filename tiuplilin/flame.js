@@ -108,7 +108,7 @@ function init() {
 		socket.emit("register server");
 	});
 	socket.on("register success", function(obj) {
-		info.innerHTML = "http://bit.ly/tiupl#" + obj.id;
+		info.innerHTML = "http://bit.ly/tiuplin#" + obj.id;
 	});
 	socket.on("padamkan", function() {
 		console.log("disuruh padam");
