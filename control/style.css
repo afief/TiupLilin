@@ -1,0 +1,10 @@
+body {
+	background-color: #444;
+}
+#info {
+	color: #fff;
+	font-size: xx-large;
+	text-align: center;
+	font-family: "Roboto", Arial;
+	margin-top: 20%;
+}

@@ -1,5 +1,3 @@
-var flame;
-
 window.AudioContext = window.AudioContext || window.webkitAudioContext;
 
 var audioContext = new AudioContext();
@@ -42,23 +40,15 @@ function updateAnalysers(time) {
 	
 
 	
-	if (magnitude > 100) {
-		padamkan();
+	if ((magnitude > 100) && isNyala) {
 		socket.emit("padamkan");
+		padamkan();
 		// window.setTimeout(liveAgain, 3000);
 	}
 	if (isNyala)
 		rafID = window.requestAnimationFrame( updateAnalysers );
 }
-function padamkan() {
-	isNyala = false;
-	flame.kill();
-}
-function nyalakan() {
-	isNyala = true;
-	flame.liveAgain();
-	rafID = window.requestAnimationFrame( updateAnalysers );
-}
+
 
 function toggleMono() {
 	if (audioInput != realAudioInput) {
@@ -94,14 +84,47 @@ function gotStream(stream) {
 	updateAnalysers();
 }
 
+function padamkan() {
+	isNyala = false;
+	info.innerHTML = "Tap untuk menyalakan lilin.";
+}
+function nyalakan() {
+	if (!isNyala)
+		rafID = window.requestAnimationFrame( updateAnalysers );
+	isNyala = true;
+	info.innerHTML = "Tiup untuk memadamkan lilin.";
+}
+
 function initAudio() {
-	flame = new Flame();
 	isNyala = true;
 
 	socket = io();
 	socket.on("connect", function() {
 		console.log("connected");
-		socket.emit("ambilposisi");
+		var id;
+		if (window.location.hash != "") {
+			id = window.location.hash.substr(1);
+		}
+		socket.emit("register client", id);
+	});
+	socket.on("register success", function(obj) {
+		isNyala = obj.isNyala;
+		if (isNyala) {
+			info.innerHTML = "Tiup untuk memadamkan lilin.";
+		} else {
+			info.innerHTML = "Tap untuk menyalakan lilin.";
+		}
+	});
+	socket.on("register fail", function(txt) {
+		alert(txt);
+	});
+	socket.on("server disconnect", function() {
+		alert("Koneksi ke lilin terputus");
+		info.innerHTML = "Koneksi ke lilin terputus. Periksa kembali URL";
+	});
+	socket.on("disconnect", function() {
+		alert("Koneksi ke lilin terputus");
+		info.innerHTML = "Koneksi ke lilin terputus. Periksa kembali URL";
 	});
 	socket.on("padamkan", function() {
 		console.log("disuruh padam");

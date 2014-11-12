@@ -92,3 +92,45 @@ function Flame() {
 	}
 	setInterval(this.draw, 30);
 }
+
+var flame;
+var isNyala = true;
+
+function init() {
+	var info = document.querySelector(".info");
+
+	flame = new Flame();
+	isNyala = true;
+
+	socket = io();
+	socket.on("connect", function() {
+		console.log("connected");
+		socket.emit("register server");
+	});
+	socket.on("register success", function(obj) {
+		info.innerHTML = "http://bit.ly/tiupl#" + obj.id;
+	});
+	socket.on("padamkan", function() {
+		console.log("disuruh padam");
+		if (isNyala) {			
+			flame.kill();
+			isNyala = false;
+		}
+	});
+	socket.on("nyalakan", function() {
+		console.log("disuruh nyala");
+		if (!isNyala) {
+			flame.liveAgain();
+			isNyala = true;
+		}
+	});
+	socket.on("server disconnect", function() {
+		alert("Koneksi terputus");
+		info.innerHTML = "Koneksi terputus. Silakan menunggu.";
+	});
+	socket.on("disconnect", function() {
+		alert("Koneksi terputus");
+		info.innerHTML = "Koneksi terputus. Silakan menunggu.";
+	});
+}
+window.addEventListener("load", init);

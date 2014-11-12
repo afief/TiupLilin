@@ -19,8 +19,8 @@ body {
 	bottom: 0px;
 	left: 50%;
 	right: 50%;
-	margin-left: -150px;
-	width: 260px;
+	margin-left: -170px;
+	width: 300px;
 	background-color: rgba(0, 0, 0, 0.9);
 	color: white;
 	padding: 20px;
@@ -28,5 +28,6 @@ body {
 	border-radius: 10px 10px 0px 0px;
 	box-shadow: 0px 0px 2px 0px #222;
 	font-family: "Roboto";
-	display: none;
+	font-size: 2em;
+	text-align: center;
 }
