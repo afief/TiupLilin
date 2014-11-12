@@ -6,7 +6,7 @@ function Flame() {
 	canvas.width = W;
 	canvas.height = H;
 
-	canvas.style.backgroundPosition = "50% " + Math.round(H/2 - 30) + "px";
+	canvas.style.backgroundPosition = Math.round(W/2-290) + "px " + Math.round(H/2 - 198) + "px";
 	
 
 	var particles = [];
@@ -22,8 +22,7 @@ function Flame() {
 
 	function particle()
 	{
-
-		this.speed = {x: -2.5+Math.random()*5, y: -15+Math.random()*10};
+		this.speed = {x: -2.5+Math.random()*5, y: -12+Math.random()*10};
 		if(mouse.x && mouse.y)
 		{
 			this.location = {x: mouse.x, y: mouse.y};
@@ -33,16 +32,15 @@ function Flame() {
 			this.location = {x: W/2, y: H/2};
 		}
 		
-		this.radius = 10+Math.random()*20;
+		this.radius = 20+Math.random()*20;
 		
 		this.life = 20+Math.random()*10;
 		this.remaining_life = this.life;
 		
-		this.r = Math.round(Math.random()*255);
+		this.r = Math.round(Math.random()*120);
 		this.g = Math.round(Math.random()*40);
 		this.b = Math.round(Math.random()*25);
 	}
-
 	this.kill = function() {
 		backupParticles = particles;
 		particles = [];

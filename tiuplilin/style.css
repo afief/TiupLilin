@@ -10,7 +10,7 @@ body {
 #canvas {
 	display: block;
 	background-image: url("img/candle.jpg");
-	background-size: 150px;
+	background-size: 600px;
 	background-position: 50% 54%;
 	background-repeat: no-repeat;
 }
