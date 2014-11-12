@@ -41,6 +41,6 @@ io.on("connection", function(socket) {
 // 	res.render(__dirname + "/pong/scss/" + req.params.file);
 // });
 
-http.listen(80, function() {
-	console.log("listen to 80");
+http.listen(3000, function() {
+	console.log("listen to 3000");
 });
