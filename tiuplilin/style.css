@@ -25,3 +25,6 @@ body {
 	text-align: center;
 	bottom: 20px; right: 20px;
 }
+.info b {
+	color: white;
+}
