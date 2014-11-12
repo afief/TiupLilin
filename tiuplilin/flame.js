@@ -38,8 +38,8 @@ function Flame() {
 		this.remaining_life = this.life;
 		
 		this.r = Math.round(Math.random()*255);
-		this.g = Math.round(Math.random()*15);
-		this.b = Math.round(Math.random()*15);
+		this.g = Math.round(Math.random()*40);
+		this.b = Math.round(Math.random()*25);
 	}
 
 	this.kill = function() {
@@ -54,9 +54,16 @@ function Flame() {
 	{
 
 		ctx.globalCompositeOperation = "source-over";
-		ctx.fillStyle = "black";
-		ctx.fillRect(0, 0, W, H);
+		// ctx.fillStyle = "transparent";
+		ctx.clearRect(0, 0, W, H);
 		ctx.globalCompositeOperation = "lighter";
+
+		/*bikin lilin*/
+		ctx.fillStyle = "black";
+		ctx.fillRect(W/2-2, H/2+5, 4, 20);
+
+		ctx.fillStyle = "#ECE7E3";
+		ctx.fillRect(W/2-20, H/2+20, 40, H/2-50);
 
 		for(var i = 0; i < particles.length; i++)
 		{

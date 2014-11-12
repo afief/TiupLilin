@@ -3,9 +3,13 @@
 <html>
 <head>
 	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<link href='http://fonts.googleapis.com/css?family=Roboto:100' rel='stylesheet' type='text/css'>
+
 	<title>Audio Recorder</title>
 
 	<link rel="stylesheet" href="tiuplilin/style.css">
+	
+	<script src="/socket.io/socket.io.js"></script>
 
 	<script src="tiuplilin/audiodisplay.js"></script>
 	<script src="tiuplilin/recorder.js"></script>
@@ -13,6 +17,10 @@
 	<script src="tiuplilin/flame.js"></script>
 </head>
 <body>
+
+	<div class="info">
+		semua lilin dari halaman ini terhubung satu sama lain.<br>tiup untuk memadamkan, tap untuk menyalakan kembali.
+	</div>
 
 	<canvas id="canvas"></canvas>
 	
