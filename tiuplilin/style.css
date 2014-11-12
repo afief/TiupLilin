@@ -16,13 +16,12 @@ body {
 }
 .info {
 	position: fixed;
-	margin-left: -170px;
-	width: 300px;
-	color: white;
+	
+	color: #999999;
 	padding: 20px;
 	border-radius: 10px 10px 0px 0px;
 	font-family: "Roboto";
-	font-size: 1.5em;
+	font-size: 1.2em;
 	text-align: center;
 	bottom: 20px; right: 20px;
 }
