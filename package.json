@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "dependencies": {
     "express": "^4.10.2",
-    "node-sass": "^1.2.2"
+    "node-sass": "^1.2.2",
+    "socket.io": "^1.2.0"
   }
 }
